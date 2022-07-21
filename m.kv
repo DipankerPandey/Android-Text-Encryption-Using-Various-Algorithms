@@ -1,0 +1,100 @@
+MDScreen:
+    name:"main"
+    MDFloatLayout:                          #arrow key and it's position
+        md_bg_color: 1,1,1,1
+
+    MDFloatLayout:                          #text and it's position
+        MDLabel:
+            text:"W e l c o m e !"
+            font_size: "26sp"
+            pos_hint: {"center_x": .6,"center_y": .85}
+            color: rgba(0,0,59,255)
+
+        MDLabel:
+            text:"Enter text to encrypt or decrypt"                  #text and it's position
+            font_size: "18sp"
+            pos_hint: {"center_x": .6,"center_y": .79}
+            color: rgba(135,133,193,255)
+
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint:{"center_x": .5, "center_y": .63}
+
+
+            TextInput:
+                id:user
+                hint_text:"   Input Text"                    #text input of email id and it's position
+                size_hint_y: .75
+                pos_hint: {"center_x": .43,"center_y": .5}
+                background_color: 1,1,1,0
+                foreground_color:rgba(0,0,59,255)
+                cursor_color: rgba( 0,0,59,255)
+                font_size:'14sp'
+                cursor_width:'2sp'
+                multiline : False
+            MDFloatLayout:
+                pos_hint: {"center_x" : .45, "center_y":0}
+                size_hint_y: .03
+                md_bg_color: rgba(178,178,178,255)
+        TextInput:
+            id: textt
+            hint_text:"Output"                    #text input of email id and it's position
+            size_hint_y: .75
+            pos_hint: {"center_x": .62,"center_y": .15}
+            background_color: 1,1,1,0
+            foreground_color:rgba(0,0,59,255)
+            cursor_color: rgba( 0,0,59,255)
+            font_size:'14sp'
+            cursor_width:'2sp'
+            multiline : False
+
+        MDFloatLayout:                                          #passord textinput position
+            pos_hint: {"center_x" : .45, "center_y":0}
+            size_hint_y: .03
+            md_bg_color: rgba(178,178,178,255)
+
+        MDFloatLayout:                                                   # yehe password keye neeche line nahi aa rahi thi ko maine daali
+            md_bg_color: rgba(178,178,178,255)                           # kivy module ka error tha maire meye
+            size_hint: .4,.002
+            pos_hint:{"center_x": .3, "center_y": .465}
+
+        MDFloatLayout:
+            md_bg_color: rgba(178,178,178,255)
+            size_hint: .4,.002
+            pos_hint:{"center_x": .6, "center_y": .465}
+
+        Button:
+            text: "Encrypt"                           #login button and it's position
+            size_hint: .40, .065
+            pos_hint:{"center_x": .24, "center_y": .34}
+            background_color: 0,0,0,0
+
+            canvas.before:
+                Color:
+                    rgba : rgba(52,0,231,255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius : [5]
+
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current="encrypt"
+
+        Button:
+            text: "Decrypt"                           #login button and it's position
+            size_hint: .40, .065
+            pos_hint:{"center_x": .76, "center_y": .34}
+            background_color: 0,0,0,0
+
+            canvas.before:
+                Color:
+                    rgba : rgba(52,0,231,255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius : [5]
+
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current="decrypt"

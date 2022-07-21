@@ -1,0 +1,80 @@
+MDScreen:
+    name:"decrypt"
+    MDFloatLayout:                          #arrow key and it's position
+        md_bg_color: 1,1,1,1
+
+    MDFloatLayout:
+
+        Button:
+            text: "ROT13"                           #login button and it's position
+            size_hint: .5, .065
+            pos_hint:{"center_x": .5, "center_y": .2}
+            background_color: 0,0,0,0
+
+            canvas.before:
+                Color:
+                    rgba : rgba(52,0,231,255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius : [5]
+
+            on_release:
+                app.decyROT13()
+                root.manager.transition.direction = "left"
+                root.manager.current="main"
+        Button:
+            text: "Bacon"                           #login button and it's position
+            size_hint: .5, .065
+            pos_hint:{"center_x": .5, "center_y": .4}
+            background_color: 0,0,0,0
+
+            canvas.before:
+                Color:
+                    rgba : rgba(52,0,231,255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius : [5]
+
+            on_release:
+                app.decyBacon()
+                root.manager.transition.direction = "left"
+                root.manager.current="main"
+        Button:
+            text: "AtBash"                           #login button and it's position
+            size_hint: .5, .065
+            pos_hint:{"center_x": .5, "center_y": .6}
+            background_color: 0,0,0,0
+
+            canvas.before:
+                Color:
+                    rgba : rgba(52,0,231,255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius : [5]
+
+            on_release:
+                app.decyAtBash()
+                root.manager.transition.direction = "left"
+                root.manager.current="main"
+
+        Button:
+            text: "Caesar"                           #login button and it's position
+            size_hint: .5, .065
+            pos_hint:{"center_x": .5, "center_y": .8}
+            background_color: 0,0,0,0
+
+            canvas.before:
+                Color:
+                    rgba : rgba(52,0,231,255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius : [5]
+
+            on_release:
+                app.decyCaesar()
+                root.manager.transition.direction = "left"
+                root.manager.current="main"
